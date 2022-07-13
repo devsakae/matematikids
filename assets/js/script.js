@@ -62,12 +62,14 @@ function sorteiaQuestao(arr) {
   const rx = arr['r' + sorteio];
   if (qsort.includes(qx) === false) {
     if (qsort.length === tpp || qsort.length === divisor) {
+      
       /* console.log('Questões')
       console.dir(qsort);
       console.log('Respostas corretas')
       console.dir(rsort);
       console.log('Opções')
       console.dir(optsort); */
+      
       return;
     }
     for (let i = 1; i < 4; i += 1) {

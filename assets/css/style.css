@@ -38,38 +38,27 @@
   cursor: pointer;
 }
 
-.selected {
-  font-size: 24px;
-  color: black;
-  background-color: #9eddec;
-  border: 2px solid black;
-  box-shadow: 2px 2px black;
-}
-
-.selected:hover {
-  color: black;
-  background-color: #9eddec;
-  border: 2px solid black;
-  box-shadow: 2px 2px black;
-}
-
 .errada {
   background-color: #f75033;
   color: white;
+  pointer-events: none;
 }
 
 .certa {
   background-color: #25a536 !important;
   color: #303030 !important;
+  pointer-events: none;
 }
 
 .erradaerrou {
   background-color: #a12b16;
   color: white;
+  pointer-events: none;
 }
 
 .certaacertou {
   background-color: #18ec34 !important;
   color: black !important;
+  pointer-events: none;
 }
 

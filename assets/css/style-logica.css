@@ -41,20 +41,24 @@
 .errada {
   background-color: #f75033;
   color: white;
+  pointer-events: none;
 }
 
 .certa {
   background-color: #25a536 !important;
   color: #303030 !important;
+  pointer-events: none;
 }
 
 .erradaerrou {
   background-color: #a12b16;
   color: white;
+  pointer-events: none;
 }
 
 .certaacertou {
   background-color: #18ec34 !important;
   color: black !important;
+  pointer-events: none;
 }
 

@@ -22,35 +22,20 @@
 }
 
 .alternativa, .aIternativa {
-  font-size: 24px;
-  display: inline-block;
-  align-content: space-between;
+  font-size: 14px;
+  display: flex;
+  align-content: flex-start;
   margin: 6px;
-  width: 150px;
+  width: 90%;
   color: #303030;
   background-color: #6da9b8;
 }
 
 .alternativa:hover, .aIternativa:hover {
-  font-size: 24px;
+  font-size: 14px;
   color: #000000;
   background-color: #43d7fc;
   cursor: pointer;
-}
-
-.selected {
-  font-size: 24px;
-  color: black;
-  background-color: #9eddec;
-  border: 2px solid black;
-  box-shadow: 2px 2px black;
-}
-
-.selected:hover {
-  color: black;
-  background-color: #9eddec;
-  border: 2px solid black;
-  box-shadow: 2px 2px black;
 }
 
 .errada {

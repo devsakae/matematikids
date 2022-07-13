@@ -1,3 +1,7 @@
+/*****
+Script criado com ajuda dos seguintes colegas de classe:
+- Vinicius Bortoletto - T24A\
+****/
 import { mathOne, mathTwo, logicOne } from './conteudo.js';
 
 const campo = document.getElementById('questoes');
@@ -6,41 +10,50 @@ let qsort = [];
 let rsort = [];
 let optsort = [];
 
-function escolheAlternativa(arg) {
-  arg.target.classList.add('selected');
-  let totalDeQuestoes = document.getElementsByClassName('questao');
-  console.log(totalDeQuestoes.length)
-  for (let i = 3; i < totalDeQuestoes.length; i += 3) {
-    console.log(document.getElementById('questao' + i).parentElement);
+function respondeQuestao(arg) {
+  let papaiDelas = this.parentElement;
+  let erradas = papaiDelas.getElementsByClassName('alternativa');
+  let certa = papaiDelas.getElementsByClassName('aIternativa');
+  for (let i = 0; i < erradas.length; i += 1) {
+    erradas[i].classList.add('errada');
+  } if (arg.target.classList[0] === 'aIternativa') {
+    arg.target.classList.add('certaacertou');
+  } else {
+    arg.target.classList.add('erradaerrou');
+    certa[0].classList.add('certa');
   }
-  
+  /*   for (let i = 1; i < papaiDelas.children.length; i += 1) {
+papaiDelas.children[i].classList.add('errada');
+console.log(papaiDelas.children[i]);
+}
+} */
 }
 
 function criaQuestao(arg1, arg2, arr) {
+  /* Cria elemento Div com class e id 'questao' */
   let criaDiv = document.createElement('div');
   criaDiv.setAttribute('id', 'questao' + temp);
+  criaDiv.classList.add('questao');
   campo.appendChild(criaDiv);
   let novoCampo = document.getElementById('questao' + temp);
-
+  /* Cria elemento P com classe 'pergunta' */
   let criaP = document.createElement('p');
-  criaP.classList.add('questao');
+  criaP.classList.add('pergunta');
   criaP.innerHTML = arg1;
-
+  /* Cria elemento Button com a classe 'aIternativa' para identificar ser a resposta certa, e prepara para inserção */
   let criaR = document.createElement('button');
-  criaR.classList.add('option');
-  criaR.classList.add('correct');
-  criaR.addEventListener('click', escolheAlternativa);
+  criaR.classList.add('aIternativa');
+  criaR.addEventListener('click', respondeQuestao);
   criaR.innerHTML = arg2;
-
+  /* Insere a pergunta na div */
   novoCampo.appendChild(criaP);
-
-  let alternativas = [];
-  alternativas.push(criaR);
-
+  /* Prepara array para randomizar as opções e já insere a correta */
+  let alternativas = [criaR];
+  /* Laço for para puxar as demais opções */
   for (let j = temp; j < (temp + 3); j += 1) {
     let criaAlt = document.createElement('button');
-    criaAlt.classList.add('option');
-    criaAlt.addEventListener('click', escolheAlternativa);
+    criaAlt.classList.add('alternativa');
+    criaAlt.addEventListener('click', respondeQuestao);
     criaAlt.innerHTML = arr[j];
     alternativas.push(criaAlt);
   }
@@ -49,7 +62,7 @@ function criaQuestao(arg1, arg2, arr) {
   for (let i = 0; i < 4; i += 1) {
     let random = Math.floor(Math.random() * alternativas.length);
     opcoesVisualizadas.push(alternativas[random]);
-    novoCampo.appendChild(opcoesVisualizadas[i]); 
+    novoCampo.appendChild(opcoesVisualizadas[i]);
     alternativas.splice(random, 1);
   }
 }
@@ -62,14 +75,14 @@ function sorteiaQuestao(arr) {
   const rx = arr['r' + sorteio];
   if (qsort.includes(qx) === false) {
     if (qsort.length === tpp || qsort.length === divisor) {
-      
+
       /* console.log('Questões')
       console.dir(qsort);
       console.log('Respostas corretas')
       console.dir(rsort);
       console.log('Opções')
       console.dir(optsort); */
-      
+
       return;
     }
     for (let i = 1; i < 4; i += 1) {

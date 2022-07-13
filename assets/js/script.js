@@ -12,21 +12,16 @@ let optsort = [];
 
 function respondeQuestao(arg) {
   let papaiDelas = this.parentElement;
-  let erradas = papaiDelas.getElementsByClassName('alternativa');
-  let certa = papaiDelas.getElementsByClassName('aIternativa');
-  for (let i = 0; i < erradas.length; i += 1) {
-    erradas[i].classList.add('errada');
+  let tipoa = papaiDelas.getElementsByClassName('alternativa');
+  let tipob = papaiDelas.getElementsByClassName('aIternativa');
+  for (let i = 0; i < tipoa.length; i += 1) {
+    tipoa[i].classList.add('errada');
   } if (arg.target.classList[0] === 'aIternativa') {
     arg.target.classList.add('certaacertou');
   } else {
     arg.target.classList.add('erradaerrou');
-    certa[0].classList.add('certa');
+    tipob[0].classList.add('certa');
   }
-  /*   for (let i = 1; i < papaiDelas.children.length; i += 1) {
-papaiDelas.children[i].classList.add('errada');
-console.log(papaiDelas.children[i]);
-}
-} */
 }
 
 function criaQuestao(arg1, arg2, arr) {
@@ -75,14 +70,6 @@ function sorteiaQuestao(arr) {
   const rx = arr['r' + sorteio];
   if (qsort.includes(qx) === false) {
     if (qsort.length === tpp || qsort.length === divisor) {
-
-      /* console.log('Questões')
-      console.dir(qsort);
-      console.log('Respostas corretas')
-      console.dir(rsort);
-      console.log('Opções')
-      console.dir(optsort); */
-
       return;
     }
     for (let i = 1; i < 4; i += 1) {

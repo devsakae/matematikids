@@ -1,11 +1,11 @@
-
-
 .segundoNivel {
 	color: rgb(250, 210, 210);
 	text-shadow: 2px 2px indigo;
 }
 
 .questao {
+  display: flex;
+  flex-flow: column wrap;
 	background-color: white;
   border: 1px solid black;
   padding: 10px;
@@ -13,26 +13,31 @@
   margin-bottom: 40px;
 }
 
+.questao button {
+  align-items: center;
+  margin: 2px auto;
+}
+
 .pergunta {
+  text-align: justify;
   color: black;
   font-size: 24px;
   text-align: justify;
   padding: 10px;
-  margin-bottom: 0;
+  margin-bottom: 20px;
 }
 
 .alternativa, .aIternativa {
-  font-size: 24px;
-  display: inline-block;
-  align-content: space-between;
+  font-size: 1.2rem;
   margin: 6px;
-  width: 150px;
+  width: 50%;
+  min-width: 80px;
   color: #303030;
   background-color: #6da9b8;
 }
 
 .alternativa:hover, .aIternativa:hover {
-  font-size: 24px;
+  font-size: 1.2rem;
   color: #000000;
   background-color: #43d7fc;
   cursor: pointer;
@@ -40,25 +45,29 @@
 
 .errada {
   background-color: #f75033;
-  color: white;
+  color: #4f4f4f;
+  font-weight: 200;
   pointer-events: none;
 }
 
 .certa {
-  background-color: #25a536 !important;
-  color: #303030 !important;
+  background-color: #28b93b !important;
+  color: #FFFFFF !important;
+  text-decoration: bold;
   pointer-events: none;
 }
 
 .erradaerrou {
-  background-color: #a12b16;
-  color: white;
+  background-color: rgb(136, 33, 15)
+  color: #4f4f4f;
+  font-weight: 200;
   pointer-events: none;
 }
 
 .certaacertou {
   background-color: #18ec34 !important;
   color: black !important;
+  text-decoration: bold;
   pointer-events: none;
 }
 

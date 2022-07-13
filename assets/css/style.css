@@ -1,0 +1,25 @@
+.segundoNivel {
+	color: rgb(250, 210, 210);
+	text-shadow: 2px 2px indigo;
+}
+
+.option {
+  display: inline-block;
+  align-content: space-around;
+  margin-right: 10px;
+  margin-bottom: 40px;
+  width: 150px;
+  color: #303030;
+  background-color: #6da9b8;
+}
+
+.option:hover {
+  color: #000000;
+  background-color: #98c8d4;
+  cursor: pointer;
+}
+
+.selected {
+  color: black;
+  background-color: yellow;
+}

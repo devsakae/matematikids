@@ -6,21 +6,41 @@ let qsort = [];
 let rsort = [];
 let optsort = [];
 
+function escolheAlternativa(arg) {
+  arg.target.classList.add('selected');
+  let totalDeQuestoes = document.getElementsByClassName('questao');
+  console.log(totalDeQuestoes.length)
+  for (let i = 3; i < totalDeQuestoes.length; i += 3) {
+    console.log(document.getElementById('questao' + i).parentElement);
+  }
+  
+}
+
 function criaQuestao(arg1, arg2, arr) {
+  let criaDiv = document.createElement('div');
+  criaDiv.setAttribute('id', 'questao' + temp);
+  campo.appendChild(criaDiv);
+  let novoCampo = document.getElementById('questao' + temp);
+
   let criaP = document.createElement('p');
   criaP.classList.add('questao');
   criaP.innerHTML = arg1;
+
   let criaR = document.createElement('button');
   criaR.classList.add('option');
   criaR.classList.add('correct');
+  criaR.addEventListener('click', escolheAlternativa);
   criaR.innerHTML = arg2;
-  campo.appendChild(criaP);
+
+  novoCampo.appendChild(criaP);
 
   let alternativas = [];
   alternativas.push(criaR);
+
   for (let j = temp; j < (temp + 3); j += 1) {
     let criaAlt = document.createElement('button');
     criaAlt.classList.add('option');
+    criaAlt.addEventListener('click', escolheAlternativa);
     criaAlt.innerHTML = arr[j];
     alternativas.push(criaAlt);
   }
@@ -29,7 +49,7 @@ function criaQuestao(arg1, arg2, arr) {
   for (let i = 0; i < 4; i += 1) {
     let random = Math.floor(Math.random() * alternativas.length);
     opcoesVisualizadas.push(alternativas[random]);
-    campo.appendChild(opcoesVisualizadas[i]);
+    novoCampo.appendChild(opcoesVisualizadas[i]); 
     alternativas.splice(random, 1);
   }
 }

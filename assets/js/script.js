@@ -1,8 +1,8 @@
 /*****
 Script criado com ajuda dos seguintes colegas de classe:
-- Vinicius Bortoletto - T24A\
+- Vinicius Bortoletto - T24A
 ****/
-import { mathOne, mathTwo, logicOne } from './conteudo.js';
+import { mathOne, mathTwo, mathThree } from './conteudo.js';
 
 const campo = document.getElementById('questoes');
 let temp = 0;
@@ -86,6 +86,6 @@ function sorteiaQuestao(arr) {
 function tpp(arg) {
   sessionStorage.setItem('mkids-tarefasporpagina', arg);
 }
-tpp(4);
+tpp(5);
 
 export default sorteiaQuestao;

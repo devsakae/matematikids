@@ -58,7 +58,7 @@
 }
 
 .erradaerrou {
-  background-color: rgb(136, 33, 15)
+  background-color: rgb(136, 33, 15);
   color: #4f4f4f;
   font-weight: 200;
   pointer-events: none;
@@ -70,4 +70,3 @@
   text-decoration: bold;
   pointer-events: none;
 }
-

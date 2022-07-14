@@ -2,6 +2,8 @@
 Script criado com ajuda dos seguintes colegas de classe:
 - Vinicius Bortoletto - T24A
 ****/
+
+/* Importa os conteúdos de Matemática */
 import { mathOne, mathTwo, mathThree } from './conteudo.js';
 
 const campo = document.getElementById('questoes');
@@ -83,9 +85,9 @@ function sorteiaQuestao(arr) {
   sorteiaQuestao(arr);
 }
 
-function tpp(arg) {
-  sessionStorage.setItem('mkids-tarefasporpagina', arg);
-}
+
+let tpp = (arg) => { sessionStorage.setItem('mkids-tarefasporpagina', arg); }
 tpp(5);
+
 
 export default sorteiaQuestao;
